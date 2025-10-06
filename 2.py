@@ -1,12 +1,13 @@
 import statistics
+import math
 a=input("Введите числа: ").split()
 ch=int(input("Введите цифру: "))
 for i in range(0, len(a)):
     a[i]=int(a[i])
 print(a)
+aa=1
 b=min(a)
 c=max(a)
-aa=1
 d=statistics.median(a)
 match ch:
     case 0:
@@ -18,19 +19,16 @@ match ch:
         if a.count(c)>=2:
             print ('Количество максимальных значений:', a.count(c))
     case 2:
-        print(b)
-        for i in range(b, c-b):
-            print(i+c)
+        for i in range(0, c-b):
+            print(aa)
+            aa+=c
     case 3:
         print(b) 
         for i in range(b, c-b):
-            print(i*c) 
+            print(aa*c) 
     case _:
         print('Медиана списка: ', d)
         if d<=0:
             print('Факториал: 0')
         else:
-            #while()
-            for i in range(1, d+1):
-                aa*=i
-        print('Факториал: ', aa)
+            print('Факториал: ', math.factorial(d))        
